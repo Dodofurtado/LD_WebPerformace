@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LD WebPerformance - Presença Digital Profissional</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'dark-blue': '#0A192F',
+                        'gold': '#FFD700',
+                    }
+                }
+            }
+        }
+    </script>    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Mobile-first styles */
+        @media (max-width: 640px) {
+            .container {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+            
+            /* Improve touch targets on mobile */
+            a, button {
+                min-height: 44px;
+                min-width: 44px;
+            }
+            
+            /* Better table handling on mobile */
+            .table-container {
+                margin: 0 -1rem;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+            
+            /* Smooth font size adjustments */
+            html {
+                font-size: 14px;
+            }
+        }
+        
+        /* Prevent content shift when scrollbar appears */
+        html {
+            scrollbar-gutter: stable;
+        }
+        
+        /* Better touch scrolling */
+        * {
+            -webkit-tap-highlight-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-dark-blue text-white">
+    <!-- Header -->
+    <header class="fixed w-full bg-dark-blue/95 backdrop-blur-sm z-50 shadow-lg">
+        <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="#" class="flex items-center">
+                <img src="imagens/logo.png" alt="LD WebPerformance" class="h-12 w-auto">
+            </a>
+            <ul class="hidden md:flex space-x-8">
+                <li><a href="#home" class="hover:text-gold transition">Home</a></li>
+                <li><a href="#sobre" class="hover:text-gold transition">Sobre</a></li>
+                <li><a href="#servicos" class="hover:text-gold transition">Serviços</a></li>
+                <li><a href="#resultados" class="hover:text-gold transition">Resultados</a></li>
+                <li><a href="#contato" class="hover:text-gold transition">Contato</a></li>
+            </ul>
+            <button class="md:hidden" id="menuButton">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div class="hidden md:hidden" id="mobileMenu">
+            <ul class="px-4 py-2 space-y-2">
+                <li><a href="#home" class="block hover:text-gold transition">Home</a></li>
+                <li><a href="#sobre" class="block hover:text-gold transition">Sobre</a></li>
+                <li><a href="#servicos" class="block hover:text-gold transition">Serviços</a></li>
+                <li><a href="#resultados" class="block hover:text-gold transition">Resultados</a></li>
+                <li><a href="#contato" class="block hover:text-gold transition">Contato</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-[90vh] flex items-center pt-16 bg-gradient-to-b from-dark-blue via-dark-blue/95 to-dark-blue">
+        <div class="container mx-auto px-4 py-16">
+            <div class="grid md:grid-cols-2 gap-8 items-center">                <div class="space-y-6 text-center md:text-left">
+                    <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
+                        Presença Digital <span class="text-gold">Profissional</span>
+                    </h1>
+                    <p class="text-lg sm:text-xl md:text-2xl text-gray-300">
+                        Criação de sites + Tráfego pago para atrair mais clientes
+                    </p>
+                    <a href="https://wa.me/5551997869258?text=Quero%20um%20site%20profissional" 
+                       class="inline-block bg-gold text-dark-blue font-bold py-3 px-6 sm:px-8 rounded-lg hover:bg-gold/90 transition transform hover:scale-105 text-sm sm:text-base">
+                        Quero um site profissional
+                    </a>
+                </div>                <div class="hidden sm:block">
+                    <div class="w-full flex items-center justify-center">
+                        <img src="imagens/quadrado.png" alt="Ilustração" 
+                             class="max-w-full h-auto rounded-lg shadow-xl transform hover:scale-105 transition-transform duration-300 w-full sm:w-5/6 md:w-full">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre Section -->
+    <section id="sobre" class="py-20">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
+                <span class="text-gold">Quem</span> Somos
+            </h2>
+            <div class="max-w-3xl mx-auto text-center text-gray-300 text-lg leading-relaxed">
+                <p>
+                    Somos especialistas em criação de sites e gestão de tráfego pago. 
+                    Ajudamos negócios locais a terem presença online de verdade e atrair 
+                    clientes todos os dias com sites responsivos, visibilidade no Google 
+                    e estratégias digitais.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Serviços Section -->
+    <section id="servicos" class="py-20 bg-dark-blue/50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
+                Nossos <span class="text-gold">Serviços</span>
+            </h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
+                <!-- Card 1 -->                <div class="bg-dark-blue p-6 rounded-lg shadow-lg border border-gold/20 hover:border-gold/40 transition">
+                    <h3 class="text-xl font-bold mb-4 text-gold">Criação de Site Profissional</h3>
+                    <p class="text-gray-300 mb-4">
+                        Página responsiva com integração WhatsApp e visibilidade no Google. 
+                        Hospedagem gratuita incluída.
+                    </p>
+                    <a href="#contato" class="text-gold font-bold hover:underline">Solicitar orçamento →</a>
+                </div>
+                
+                <!-- Card 2 -->
+                <div class="bg-dark-blue p-6 rounded-lg shadow-lg border border-gold/20 hover:border-gold/40 transition">
+                    <h3 class="text-xl font-bold mb-4 text-gold">Formulário de Leads</h3>
+                    <p class="text-gray-300 mb-4">
+                        Captação de dados do cliente com envio para WhatsApp ou e-mail.
+                    </p>
+                    <a href="#contato" class="text-gold font-bold hover:underline">Solicitar orçamento →</a>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-dark-blue p-6 rounded-lg shadow-lg border border-gold/20 hover:border-gold/40 transition">
+                    <h3 class="text-xl font-bold mb-4 text-gold">Google Meu Negócio</h3>
+                    <p class="text-gray-300 mb-4">
+                        Criação ou otimização da ficha com SEO local para aparecer nas buscas.
+                    </p>
+                    <a href="#contato" class="text-gold font-bold hover:underline">Solicitar orçamento →</a>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="bg-dark-blue p-6 rounded-lg shadow-lg border border-gold/20 hover:border-gold/40 transition">
+                    <h3 class="text-xl font-bold mb-4 text-gold">Instagram Profissional</h3>
+                    <p class="text-gray-300 mb-4">
+                        Criação do perfil, 5 posts prontos, bio com link e orientação de hashtags.
+                    </p>
+                    <a href="#contato" class="text-gold font-bold hover:underline">Solicitar orçamento →</a>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="bg-dark-blue p-6 rounded-lg shadow-lg border border-gold/20 hover:border-gold/40 transition">
+                    <h3 class="text-xl font-bold mb-4 text-gold">Impulsionamento Inicial</h3>
+                    <p class="text-gray-300 mb-4">
+                        Campanha configurada com verba do cliente, segmentação e 
+                        acompanhamento por 7 dias.
+                    </p>
+                    <a href="#contato" class="text-gold font-bold hover:underline">Solicitar orçamento →</a>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="bg-dark-blue p-6 rounded-lg shadow-lg border border-gold/20 hover:border-gold/40 transition">
+                    <h3 class="text-xl font-bold mb-4 text-gold">Pacote Completo</h3>
+                    <p class="text-gray-300 mb-4">
+                        Todos os serviços com desconto especial.
+                    </p>
+                    <a href="#contato" class="text-gold font-bold hover:underline">Solicitar orçamento →</a>
+                </div>
+            </div>
+        </div>
+    </section>    <!-- Resultados Section -->
+    <section id="resultados" class="py-20">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
+                Desempenho com <span class="text-gold">Mídia Paga</span>
+            </h2>
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-gold/10 p-6 rounded-lg mb-8 text-center">
+                    <p class="text-white/90">
+                        ⚠️ Os resultados apresentados são estimativas baseadas em campanhas anteriores. 
+                        O desempenho real pode variar significativamente dependendo do seu produto, 
+                        mercado, sazonalidade e estratégia de campanha.
+                    </p>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left">
+                        <thead>
+                            <tr class="border-b border-gold/20">
+                                <th class="py-4 px-6 text-gold">Plataforma</th>
+                                <th class="py-4 px-6 text-gold">Alcance</th>
+                                <th class="py-4 px-6 text-gold">Engajamento</th>
+                                <th class="py-4 px-6 text-gold">Conversão Média*</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b border-gold/20 hover:bg-gold/5">
+                                <td class="py-4 px-6">Google Ads</td>
+                                <td class="py-4 px-6">Alto</td>
+                                <td class="py-4 px-6">Muito Alto</td>
+                                <td class="py-4 px-6">15-25%</td>
+                            </tr>
+                            <tr class="border-b border-gold/20 hover:bg-gold/5">
+                                <td class="py-4 px-6">Instagram</td>
+                                <td class="py-4 px-6">Muito Alto</td>
+                                <td class="py-4 px-6">Alto</td>
+                                <td class="py-4 px-6">10-20%</td>
+                            </tr>
+                            <tr class="border-b border-gold/20 hover:bg-gold/5">
+                                <td class="py-4 px-6">TikTok</td>
+                                <td class="py-4 px-6">Muito Alto</td>
+                                <td class="py-4 px-6">Médio</td>
+                                <td class="py-4 px-6">5-15%</td>
+                            </tr>
+                            <tr class="hover:bg-gold/5">
+                                <td class="py-4 px-6">YouTube</td>
+                                <td class="py-4 px-6">Alto</td>
+                                <td class="py-4 px-6">Alto</td>
+                                <td class="py-4 px-6">8-18%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="text-sm text-gray-400 mt-4">
+                    * A taxa de conversão representa a porcentagem de pessoas que entram em contato após interagirem com o anúncio. 
+                    Os resultados variam de acordo com diversos fatores, incluindo qualidade do produto/serviço, preço, 
+                    concorrência e público-alvo.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Manutenção Section -->
+    <section id="manutencao" class="py-20 bg-dark-blue/50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
+                Manutenção <span class="text-gold">Mensal</span>
+            </h2>
+            <div class="max-w-3xl mx-auto text-center">
+                <div class="bg-dark-blue p-8 rounded-lg shadow-lg border border-gold/20">
+                    <p class="text-2xl font-bold text-gold mb-6"></p>
+                    <ul class="text-gray-300 space-y-4">
+                        <li>✓ ajuste de site semanal</li>
+                        <li>✓ Manutenção de tráfego</li>
+                        <li>✓ Posts mensais no Instagram</li>
+                        <li>✓ Atualizações Google Business</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato Section -->
+    <section id="contato" class="py-20">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
+                Fale <span class="text-gold">Conosco</span>
+            </h2>
+            <div class="max-w-xl mx-auto">
+                <div class="text-center space-y-4">
+                    <p class="text-xl">Nome da Empresa</p>
+                    <p class="text-gold font-bold text-2xl">LD WebPerformance</p>
+                    
+                    <p class="text-xl mt-6">Portfólio</p>
+                    <a href="https://github.com/Dodofurtado?tab=repositories"
+                         class="text-gold hover:underline">Ver nossos trabalhos</a>
+
+                    <div class="mt-8">
+                        <a href="https://wa.me/5551997869258?text=Quero%20contratar%20seus%20serviços" 
+                           class="inline-block bg-gold text-dark-blue font-bold py-3 px-8 rounded-lg hover:bg-gold/90 transition transform hover:scale-105">
+                            Quero contratar seus serviços
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark-blue/95 py-8">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold text-gold mb-4">LD WebPerformance</h3>
+                    <p class="text-gray-300">Sua presença digital profissional</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-gold mb-4">Menu</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-300 hover:text-gold transition">Home</a></li>
+                        <li><a href="#sobre" class="text-gray-300 hover:text-gold transition">Sobre</a></li>
+                        <li><a href="#servicos" class="text-gray-300 hover:text-gold transition">Serviços</a></li>
+                        <li><a href="#resultados" class="text-gray-300 hover:text-gold transition">Resultados</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-gold mb-4">Contato</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#contato" class="text-gray-300 hover:text-gold transition">Fale Conosco</a></li>
+                        <li><a href="https://wa.me/seu-numero" class="text-gray-300 hover:text-gold transition">WhatsApp</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gold/20 mt-8 pt-8 text-center text-gray-300">
+                <p>&copy; 2025 LD WebPerformance. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/5551997869258?text=Olá,%20gostaria%20de%20mais%20informações" 
+       class="fixed bottom-6 right-6 bg-[#25D366] text-white p-3 rounded-full shadow-lg hover:scale-110 transition z-50"
+       target="_blank" rel="noopener noreferrer">
+        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+        </svg>
+    </a>
+
+    <script src="script.js"></script>
+</body>
+</html>
