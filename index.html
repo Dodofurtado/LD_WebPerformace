@@ -355,5 +355,26 @@
     </a>
 
     <script src="script.js"></script>
+<script>
+  document.querySelector('a[href^="https://wa.me"]').addEventListener('click', function() {
+    gtag('event', 'clique_whatsapp', {
+      event_category: 'Contato',
+      event_label: 'Botão WhatsApp Flutuante',
+      value: 1
+    });
+  });
+</script>
+    <script>
+  document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+    anchor.addEventListener('click', function() {
+      const section = this.getAttribute('href');
+      gtag('event', 'visualizacao_secao', {
+        page_path: section, // ex: "#servicos"
+        event_category: 'Navegação OnePage',
+        event_label: 'Usuário navegou para ' + section
+      });
+    });
+  });
+</script>
 </body>
 </html>
